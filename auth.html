@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login / Sign Up - SPEED CYCLE</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="auth-body">
+    <div class="banner">
+        <video autoplay loop muted playsinline>
+            <source src="images/CYCLING CINEMATIC VIDEO  I GH5.mp4" type="video/mp4" />
+        </video>
+        <div class="navbar" id="navbar">
+            <img class="logo" src="images/logo.png" alt="Speed Cycle Logo" />
+            <div
+                class="hamburger"
+                id="hamburger"
+                tabindex="0"
+                role="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </div>
+            <ul id="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="auth.html" class="active">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="auth-container">
+        <h2 id="auth-title">Login</h2>
+        <form id="auth-form">
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required />
+            <div id="signup-extra" style="display: none;">
+                <input type="password" placeholder="Confirm Password" required />
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>
+            <span id="toggle-text">Don't have an account?</span>
+            <a href="#" id="toggle-auth">Sign up</a>
+        </p>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Toggle login/sign-up form fields
+        const toggleLink = document.getElementById('toggle-auth');
+        const authTitle = document.getElementById('auth-title');
+        const authForm = document.getElementById('auth-form');
+        const signupExtra = document.getElementById('signup-extra');
+        const toggleText = document.getElementById('toggle-text');
+        const submitButton = authForm.querySelector('button');
+
+        let isLogin = true;
+
+        toggleLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            isLogin = !isLogin;
+
+            if (isLogin) {
+                authTitle.textContent = 'Login';
+                signupExtra.style.display = 'none';
+                toggleText.textContent = "Don't have an account?";
+                toggleLink.textContent = "Sign up";
+                submitButton.textContent = "Login";
+            } else {
+                authTitle.textContent = 'Sign Up';
+                signupExtra.style.display = 'block';
+                toggleText.textContent = "Already have an account?";
+                toggleLink.textContent = "Login";
+                submitButton.textContent = "Sign Up";
+            }
+        });
+    </script>
+</body>
+</html>

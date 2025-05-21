@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop - SPEED CYCLE</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="banner">
+    <video autoplay loop muted playsinline>
+      <source src="images/CYCLING CINEMATIC VIDEO  I GH5.mp4" type="video/mp4" />
+    </video>
+    <div class="navbar" id="navbar">
+      <img class="logo" src="images/logo.png" alt="Speed Cycle Logo" />
+      <div class="hamburger" id="hamburger" tabindex="0" role="button" aria-label="Toggle navigation" aria-expanded="false">☰</div>
+      <ul id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="auth.html">Login</a></li>
+      </ul>
+    </div>
+    <a id="viewCartButton" href="cart.html">🛒 Cart (0)</a>
+    <div class="content" id="mainContent">
+      <h1>Shop Bikes</h1>
+      <p>Choose your favorite bike and add it to your cart.</p>
+    </div>
+  </div>
+
+  <div class="shop">
+    <h1>Our Best Sellers</h1>
+    <div class="product-grid">
+      <div class="product-card" data-price="900">
+        <img src="images/bike1.jpg" alt="Road Bike" />
+        <h2>Road Bike</h2>
+        <p>$900.00</p>
+        <button class="cart-button">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-price="1200">
+        <img src="images/bike2.jpg" alt="Mountain Bike" />
+        <h2>Mountain Bike</h2>
+        <p>$1,200.00</p>
+        <button class="cart-button">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-price="700">
+        <img src="images/bike3.jpg" alt="Fixed Gear Bike" />
+        <h2>Fixed Gear Bike</h2>
+        <p>$700.00</p>
+        <button class="cart-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+/* === BANNER + VIDEO BACKGROUND === */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.banner video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .banner video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* === NAVBAR === */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    background-color: rgb(5, 5, 5);
+    padding-top: 140px;
+    transition: width 0.4s ease;
+    z-index: 998;
+}
+
+.navbar.open {
+    width: 220px;
+    padding-top: 140px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    flex-direction: column;
+}
+
+.navbar ul.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.navbar ul.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+
+.navbar ul li {
+    margin: 15px 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    padding: 12px;
+    display: block;
+    border-radius: 10px;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background: white;
+    color: rgb(20, 73, 94);
+    transition: 0.3s;
+}
+
+/* === DESKTOP OVERRIDE === */
+@media (min-width: 1024px) {
+    .navbar {
+        width: 250px;
+        padding-top: 140px;
+    }
+
+    .navbar ul {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .hamburger {
+        display: block;
+        color: white;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        position: absolute;
+        top: 30px;
+        left: 200px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .content.shifted {
+        margin-left: 250px;
+    }
+}
+
+/* === LOGO === */
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 140px;
+    max-width: 40vw;
+    cursor: pointer;
+    z-index: 1001;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+    transition: width 0.3s ease, filter 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        width: 160px;
+        max-width: none;
+    }
+}
+
+/* === HAMBURGER MENU (MOBILE & DESKTOP) === */
+.hamburger {
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+/* === PAGE CONTENT === */
+.content {
+    width: 100%;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: margin-left 0.4s ease;
+}
+
+.content.shifted {
+    margin-left: 220px;
+}
+
+@media (min-width: 1024px) {
+    .content.shifted {
+        margin-left: 250px;
+    }
+}
+
+.content h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* === BUTTONS === */
+button,
+.cart-button {
+    width: 200px;
+    padding: 15px;
+    margin: 10px 5px;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button {
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+button:hover {
+    background: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
+}
+
+.cart-button {
+    background-color: rgb(20, 73, 94);
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.cart-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+/* === SHOP PAGE === */
+.shop {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+}
+
+.shop h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-card h2 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* === AUTH PAGES (LOGIN / SIGNUP) === */
+.auth-body {
+    background: linear-gradient(135deg, #143e4d, #305f6b);
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #143e4d;
+}
+
+.auth-container form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.auth-container form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #143e4d;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-container form button:hover {
+    background-color: #1c556b;
+}
+
+.auth-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-container a {
+    color: #143e4d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* === CART === */
+#viewCartButton,
+#viewCartButton:link,
+#viewCartButton:visited {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgb(255, 255, 255);
+    color: rgb(20, 73, 94);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1002;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+#viewCartButton:hover {
+    background-color: rgb(20, 73, 94);
+    color: white;
+}
+
+/* Cart Page Styling */
+.cart-container {
+    max-width: 800px;
+    margin: 100px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.cart-item span {
+    font-size: 18px;
+}
+
+.remove-button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.remove-button:hover {
+    background-color: #ff0000;
+}
+
+.total {
+    font-size: 24px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.empty-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+/* ====== RESPONSIVE MOBILE STYLES ====== */
+@media (max-width: 768px) {
+    /* Navbar covers full width when open */
+    .navbar {
+        width: 0;
+        padding-top: 80px;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    .navbar.open {
+        width: 100%;
+        padding-top: 80px;
+    }
+    .navbar ul {
+        padding: 0 30px;
+        flex-direction: column;
+    }
+    .navbar ul li {
+        margin: 20px 0;
+    }
+
+    /* Hamburger fixed top-left */
+    .hamburger {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        font-size: 28px;
+        z-index: 11000;
+    }
+
+    /* Logo smaller and right of hamburger */
+    .logo {
+        position: fixed;
+        top: 15px;
+        left: 60px;
+        width: 120px;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+        z-index: 11000;
+    }
+
+    /* Banner height smaller */
+    .banner {
+        height: 60vh;
+    }
+    .banner video {
+        height: 60vh;
+        object-fit: cover;
+    }
+
+    /* Content repositioned bottom center */
+    .content {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+    .content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    /* Buttons full width */
+    button,
+    .cart-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    /* Product grid stacked */
+    .product-grid {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .product-card {
+        width: 100%;
+        padding: 15px;
+    }
+    .product-card img {
+        height: 160px;
+    }
+
+    /* Cart layout */
+    .cart-container {
+        margin: 80px 15px;
+        padding: 20px;
+    }
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cart-item span {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    .remove-button {
+        width: 100%;
+        padding: 10px 0;
+        margin-top: 5px;
+    }
+
+    /* Cart button */
+    #viewCartButton {
+        top: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

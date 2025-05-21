@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart - SPEED CYCLE</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="banner">
+    <video autoplay loop muted playsinline>
+      <source src="images/CYCLING CINEMATIC VIDEO  I GH5.mp4" type="video/mp4" />
+    </video>
+    <div class="navbar" id="navbar">
+      <img class="logo" src="images/logo.png" alt="Speed Cycle Logo" />
+      <div class="hamburger" id="hamburger" tabindex="0" role="button" aria-label="Toggle navigation" aria-expanded="false">☰</div>
+      <ul id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="auth.html">Login</a></li>
+      </ul>
+    </div>
+    <div class="content" id="mainContent">
+      <h1>Your Shopping Cart</h1>
+      <p>Review your selected bikes below.</p>
+    </div>
+  </div>
+
+  <div class="shop" style="padding: 60px 20px; min-height: 80vh;">
+    <div class="cart-container">
+      <div id="cartItems" class="cart-items"><!-- Cart items will appear here --></div>
+      <div class="total" id="cartTotal">Total: $0</div>
+      <div class="empty-message" id="emptyMessage" style="display: none;">
+        Your cart is empty.
+      </div>
+      <a href="shop.html" class="back-to-shop" style="color: white; text-decoration: underline; font-weight: 600;">← Back to Shop</a>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>
