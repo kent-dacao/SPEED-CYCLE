@@ -1,4 +1,4 @@
-/* === BANNER + VIDEO BACKGROUND === */
+/*BANNER + VIDEO BACKGROUND*/
 .banner {
     position: relative;
     width: 100%;
@@ -34,7 +34,7 @@
     }
 }
 
-/* === NAVBAR === */
+/*NAVBAR*/
 .navbar {
     position: fixed;
     top: 0;
@@ -96,7 +96,7 @@
     transition: 0.3s;
 }
 
-/* === DESKTOP OVERRIDE === */
+/*DESKTOP OVERRIDE*/
 @media (min-width: 1024px) {
     .navbar {
         width: 250px;
@@ -126,7 +126,7 @@
     }
 }
 
-/* === LOGO === */
+/* LOGO */
 .logo {
     position: fixed;
     top: 20px;
@@ -146,7 +146,7 @@
     }
 }
 
-/* === HAMBURGER MENU (MOBILE & DESKTOP) === */
+/* TOGGLE MENU MOBILE & DESKTOP */
 .hamburger {
     position: absolute;
     top: 30px;
@@ -157,7 +157,7 @@
     z-index: 1002;
 }
 
-/* === PAGE CONTENT === */
+/* PAGE CONTENT */
 .content {
     width: 100%;
     position: absolute;
@@ -196,7 +196,7 @@
     margin-bottom: 10px;
 }
 
-/* === BUTTONS === */
+/* BUTTONS */
 button,
 .cart-button {
     width: 200px;
@@ -232,7 +232,7 @@ button:hover {
     color: black;
 }
 
-/* === SHOP PAGE === */
+/* SHOP PAGE */
 .shop {
     padding: 60px 20px;
     text-align: center;
@@ -283,7 +283,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-/* === AUTH PAGES (LOGIN / SIGNUP) === */
+/* LOGIN / SIGNUP */
 .auth-body {
     background: linear-gradient(135deg, #143e4d, #305f6b);
     font-family: 'Segoe UI', sans-serif;
@@ -351,7 +351,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* === CART === */
+/* CART */
 #viewCartButton,
 #viewCartButton:link,
 #viewCartButton:visited {
@@ -429,9 +429,9 @@ button:hover {
     margin-top: 40px;
 }
 
-/* ====== RESPONSIVE MOBILE STYLES ====== */
+/* RESPONSIVE MOBILE STYLE */
 @media (max-width: 768px) {
-    /* Navbar covers full width when open */
+
     .navbar {
         width: 0;
         padding-top: 80px;
@@ -459,7 +459,7 @@ button:hover {
         z-index: 11000;
     }
 
-    /* Logo smaller and right of hamburger */
+    /* Logo adjust */
     .logo {
         position: fixed;
         top: 15px;
@@ -478,7 +478,7 @@ button:hover {
         object-fit: cover;
     }
 
-    /* Content repositioned bottom center */
+    /* Content bottom center */
     .content {
         top: auto;
         bottom: 20px;
